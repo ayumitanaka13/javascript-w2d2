@@ -1,11 +1,30 @@
-let input = prompt('What would you like to do?');
-
+let input = "";
 //optional to add dummy data inside todos
 const todos = ['Collect Chicken Eggs','Clean Litter Box'];
 
 //start with a while loop that checks for quit input
-while(){
+while(input !== 'q'){
+    input = prompt('What would you like to do?');
+
     //if else conditions
+    if (input == 'new') {
+        let task = prompt('What do you want to add to Todos?');
+        todos.push(task);
+        console.log('Added successfully');
+    } else if (input == 'list') {
+        console.log('Here are all todos');
+        for (let i = 0; i < todos.length; i++) {
+            console.log(`${i}: ${todos[i]}`);
+        }
+    } else if (input == 'delete') {
+        let number = prompt('Which number of todos do you want to delete?');
+        todos.splice(number, 1);
+    } else if (input == 'q') {
+        console.log('Bye');
+        break;
+    } else {
+        console.log('try again');
+    }
 }
 
-console.log('OK QUIT THE APP');
+console.log('Bye Bye');
