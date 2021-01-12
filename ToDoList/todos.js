@@ -1,4 +1,4 @@
-let input = "";
+let input;
 //optional to add dummy data inside todos
 const todos = ['Collect Chicken Eggs','Clean Litter Box'];
 
@@ -19,6 +19,7 @@ while(input !== 'q'){
     } else if (input == 'delete') {
         let number = prompt('Which number of todos do you want to delete?');
         todos.splice(number, 1);
+        console.log('Deleted successfully');
     } else if (input == 'q') {
         console.log('Bye');
         break;
