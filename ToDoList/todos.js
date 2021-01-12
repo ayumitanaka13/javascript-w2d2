@@ -18,10 +18,13 @@ while(input !== 'q'){
         }
     } else if (input == 'delete') {
         let number = prompt('Which number of todos do you want to delete?');
-        todos.splice(number, 1);
-        console.log('Deleted successfully');
+        if (number >= todos.length || number < 0) {
+            console.log('Wrong input');
+        } else {
+            todos.splice(number, 1);
+            console.log('Deleted successfully');
+        }
     } else if (input == 'q') {
-        console.log('Bye');
         break;
     } else {
         console.log('try again');
